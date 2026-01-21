@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import { AuroraText } from "./AuroraText";
+
 export default function Hero() {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -44,7 +46,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <h1 className="font-heading font-extrabold text-6xl md:text-8xl text-white leading-[0.9] tracking-tighter mb-6 drop-shadow-2xl">
-                        Master the <span className="text-secondary">Water.</span>
+                        Master the <AuroraText>Water.</AuroraText>
                         <br />
                         Master Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">Mind.</span>
                     </h1>

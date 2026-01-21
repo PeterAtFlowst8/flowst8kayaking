@@ -20,6 +20,15 @@ export default {
                 sans: ["var(--font-inter)"],
                 heading: ["var(--font-outfit)"],
             },
+            animation: {
+                aurora: "aurora 6s linear infinite",
+            },
+            keyframes: {
+                aurora: {
+                    "0%": { backgroundPosition: "50% 50%, 50% 50%" },
+                    "100%": { backgroundPosition: "350% 50%, 350% 50%" },
+                },
+            },
         },
     },
     plugins: [],
