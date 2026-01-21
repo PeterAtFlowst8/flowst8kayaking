@@ -23,21 +23,27 @@ export default function Navbar() {
             className={clsx(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled
-                    ? "bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg py-4"
+                    ? "bg-white/80 backdrop-blur-md border-b border-primary/10 shadow-sm py-4"
                     : "bg-transparent py-6"
             )}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Animated Logo */}
                 <Link href="/" className="group flex items-center gap-2">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 group-hover:border-secondary transition-colors duration-300">
+                    <div className={clsx(
+                        "relative w-12 h-12 rounded-full overflow-hidden border transition-colors duration-300",
+                        isScrolled ? "border-primary/20 group-hover:border-secondary" : "border-white/20 group-hover:border-secondary"
+                    )}>
                         <img
                             src="/images/logo-icon.jpeg"
                             alt="FlowSt8 Logo"
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <span className="font-heading text-2xl font-bold text-white tracking-tight">
+                    <span className={clsx(
+                        "font-heading text-2xl font-bold tracking-tight transition-colors duration-300",
+                        isScrolled ? "text-primary" : "text-white"
+                    )}>
                         FlowSt
                         <span className="text-secondary inline-block transition-transform duration-300 group-hover:rotate-180">
                             8
@@ -51,7 +57,10 @@ export default function Navbar() {
                         <Link
                             key={item}
                             href={`#${item.toLowerCase()}`}
-                            className="text-white/90 hover:text-secondary font-medium transition-colors relative group"
+                            className={clsx(
+                                "font-medium transition-colors relative group",
+                                isScrolled ? "text-primary/80 hover:text-secondary" : "text-white/90 hover:text-secondary"
+                            )}
                         >
                             {item}
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full" />
@@ -72,7 +81,10 @@ export default function Navbar() {
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden text-white"
+                    className={clsx(
+                        "md:hidden transition-colors duration-300",
+                        isScrolled ? "text-primary" : "text-white"
+                    )}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
