@@ -59,7 +59,36 @@ export default function Services() {
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {tiers.map((tier) => (
+                    {[
+                        {
+                            name: "Confidence",
+                            level: "The Basics",
+                            price: "€80",
+                            features: ["Safety & Rescue Basics", "Solid Paddle Strokes", "Calm Water Confidence", "Gear Included"],
+                            color: "bg-secondary",
+                            cta: "Start Here",
+                            delay: 0.2
+                        },
+                        {
+                            name: "Control",
+                            level: "Intermediate",
+                            price: "€120",
+                            features: ["Whitewater Class II-III", "Bombproof Roll", "Edging & Line Choice", "Video Analysis"],
+                            color: "bg-primary",
+                            featured: true,
+                            cta: "Level Up",
+                            delay: 0.4
+                        },
+                        {
+                            name: "Mastery",
+                            level: "Advanced",
+                            price: "€150",
+                            features: ["Class IV Strategy", "Boofing & Drops", "Dynamic Leadership", "Flow State Psychology"],
+                            color: "bg-accent",
+                            cta: "Go Pro",
+                            delay: 0.6
+                        }
+                    ].map((tier) => (
                         <motion.div
                             key={tier.name}
                             initial={{ opacity: 0, y: 30 }}
@@ -107,7 +136,7 @@ export default function Services() {
                                     ? "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/30"
                                     : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                             )}>
-                                Book Now
+                                {tier.cta}
                                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                             </button>
                         </motion.div>

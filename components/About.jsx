@@ -70,14 +70,17 @@ export default function About() {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
-                                More Than Just <br />
-                                <span className="text-secondary">Paddling.</span>
+                                Why <span className="text-secondary">FlowSt8?</span>
                             </h2>
 
-                            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                At FlowSt8, we believe that mastering the river is about mastering yourself.
-                                Our coaching combines expert technical instruction with mindfulness strategies used by elite athletes to help you find calm in the chaos.
-                            </p>
+                            <div className="mb-8 space-y-4">
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    I am a <span className="font-bold text-primary">British Canoeing certified Advanced Whitewater Coach & Leader</span> with over <span className="font-bold text-primary">20 years</span> of experience on the river and 4 years of professional coaching.
+                                </p>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Most coaching focuses only on the blade. I focus on the pilot. By combining elite technical instruction with flow state psychology, I help you build the mental resilience to match your physical skills.
+                                </p>
+                            </div>
 
                             <div className="grid sm:grid-cols-2 gap-8">
                                 <motion.div
@@ -87,9 +90,9 @@ export default function About() {
                                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                                         <Droplets size={24} />
                                     </div>
-                                    <h4 className="font-bold text-xl text-primary mb-2">Technical Precision</h4>
+                                    <h4 className="font-bold text-xl text-primary mb-2">Technical Mastery</h4>
                                     <p className="text-sm text-gray-600">
-                                        Efficient strokes and body mechanics to navigate with grace, not just muscle.
+                                        Advanced British Canoeing standards to refine your boof, edging, and line choice.
                                     </p>
                                 </motion.div>
 
@@ -100,9 +103,9 @@ export default function About() {
                                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4">
                                         <Brain size={24} />
                                     </div>
-                                    <h4 className="font-bold text-xl text-primary mb-2">Mindset Mastery</h4>
+                                    <h4 className="font-bold text-xl text-primary mb-2">Flow State Mindset</h4>
                                     <p className="text-sm text-gray-600">
-                                        Learn to calm the mind in chaos and access your true flow state on demand.
+                                        Proven psychological tools to silence fear and access peak performance on demand.
                                     </p>
                                 </motion.div>
                             </div>

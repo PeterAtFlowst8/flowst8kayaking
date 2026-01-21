@@ -46,9 +46,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <h1 className="font-heading font-extrabold text-6xl md:text-8xl text-white leading-[0.9] tracking-tighter mb-6 drop-shadow-2xl">
-                        Master the <AuroraText>Water.</AuroraText>
-                        <br />
-                        Master Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">Mind.</span>
+                        Stop Fighting <br /> the <AuroraText>River.</AuroraText>
                     </h1>
                 </motion.div>
 
@@ -58,8 +56,9 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 font-light"
                 >
-                    Elite kayak coaching meets flow state psychology.
-                    <br className="hidden md:block" /> Unlock your true potential on the river.
+                    British Canoeing Advanced Whitewater Coach & Leader.
+                    <br className="hidden md:block" />
+                    <span className="font-semibold text-white">20+ Years Experience.</span> Turn anxiety into precision in one session.
                 </motion.p>
 
                 <motion.div
@@ -71,7 +70,7 @@ export default function Hero() {
                         href="#book"
                         className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-accent rounded-full hover:bg-[#ff8555] hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,107,53,0.5)] hover:shadow-[0_0_60px_-15px_rgba(255,107,53,0.7)]"
                     >
-                        Find Your FlowSt8
+                        Start Your Evolution
                         <svg
                             className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1"
                             fill="none"
