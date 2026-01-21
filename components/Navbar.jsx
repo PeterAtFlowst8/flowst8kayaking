@@ -29,7 +29,14 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Animated Logo */}
-                <Link href="/" className="group flex items-center gap-1">
+                <Link href="/" className="group flex items-center gap-2">
+                    <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20 group-hover:border-secondary transition-colors duration-300">
+                        <img
+                            src="/images/logo-icon.jpeg"
+                            alt="FlowSt8 Logo"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
                     <span className="font-heading text-2xl font-bold text-white tracking-tight">
                         FlowSt
                         <span className="text-secondary inline-block transition-transform duration-300 group-hover:rotate-180">
