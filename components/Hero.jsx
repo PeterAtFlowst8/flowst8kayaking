@@ -27,7 +27,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/60 z-10" />
                 <div className="absolute inset-0 bg-black/20 z-10" />
                 <Image
-                    src="/images/BABS2827.webp"
+                    src="/images/hero1.webp"
                     alt="Kayaker entering flow state"
                     fill
                     priority
