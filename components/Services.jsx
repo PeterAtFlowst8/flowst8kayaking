@@ -1,37 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Users } from "lucide-react";
 import clsx from "clsx";
 import Image from "next/image";
 
-const tiers = [
-    {
-        name: "Discover Flow",
-        level: "Beginner",
-        price: "€80",
-        features: ["Safety Basics", "Paddle Strokes 101", "Calm Water Practice", "Gear Included"],
-        color: "bg-secondary",
-        delay: 0.2
-    },
-    {
-        name: "Rapid Progress",
-        level: "Intermediate",
-        price: "€120",
-        features: ["Whitewater Class II-III", "Rolling Technique", "Edging & Bracing", "Video Analysis"],
-        color: "bg-primary",
-        featured: true,
-        delay: 0.4
-    },
-    {
-        name: "Master Class",
-        level: "Advanced",
-        price: "€150",
-        features: ["Class IV Strategy", "Boofing & Drops", "Rescue Scenarios", "Flow State Psychology"],
-        color: "bg-accent",
-        delay: 0.6
-    }
-];
+// Helper icon component since lucide might expect different props
+const UsersIcon = ({ size, ...props }) => <Users size={size} {...props} />;
 
 export default function Services() {
     return (
@@ -51,7 +26,7 @@ export default function Services() {
                         Coaching Programs
                     </span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">
-                        Choose Your Path
+                        Choose Your Format
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                         From your first paddle stroke to mastering the steepest drops, we have a program designed to help you find your flow.
@@ -61,31 +36,28 @@ export default function Services() {
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {[
                         {
-                            name: "Confidence",
-                            level: "The Basics",
-                            price: "€80",
-                            features: ["Safety & Rescue Basics", "Solid Paddle Strokes", "Calm Water Confidence", "Gear Included"],
+                            name: "1:1 Private Coaching",
+                            description: "Personalized attention focused on your specific goals and skill level.",
+                            features: ["Custom curriculum", "Flexible scheduling", "Rapid progression", "Video analysis"],
                             color: "bg-secondary",
-                            cta: "Start Here",
+                            cta: "Book Private",
                             delay: 0.2
                         },
                         {
-                            name: "Control",
-                            level: "Intermediate",
-                            price: "€120",
-                            features: ["Whitewater Class II-III", "Bombproof Roll", "Edging & Line Choice", "Video Analysis"],
+                            name: "Pairs (2 People)",
+                            description: "Learn alongside a friend or partner with shared goals and similar skill levels.",
+                            features: ["Shared learning", "Cost-effective", "Peer motivation", "Group dynamics"],
                             color: "bg-primary",
                             featured: true,
-                            cta: "Level Up",
+                            cta: "Book Duo",
                             delay: 0.4
                         },
                         {
-                            name: "Mastery",
-                            level: "Advanced",
-                            price: "€150",
-                            features: ["Class IV Strategy", "Boofing & Drops", "Dynamic Leadership", "Flow State Psychology"],
+                            name: "Small Groups (3-6)",
+                            description: "Join others in a supportive environment perfect for building river community.",
+                            features: ["Social learning", "Best value", "River friends", "Varied perspectives"],
                             color: "bg-accent",
-                            cta: "Go Pro",
+                            cta: "Join Group",
                             delay: 0.6
                         }
                     ].map((tier) => (
@@ -109,15 +81,16 @@ export default function Services() {
                                 </div>
                             )}
 
-                            <div className="mb-6">
-                                <h3 className="text-xl font-bold text-gray-900 mb-1">{tier.name}</h3>
-                                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">{tier.level}</p>
+                            <div className="mb-6 flex items-center gap-4">
+                                <div className={clsx("p-3 rounded-2xl text-white shadow-lg", tier.color)}>
+                                    <UsersIcon size={24} />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900">{tier.name}</h3>
                             </div>
 
-                            <div className="mb-8">
-                                <span className="text-4xl font-extrabold text-primary">{tier.price}</span>
-                                <span className="text-gray-500">/session</span>
-                            </div>
+                            <p className="text-gray-600 mb-8 leading-relaxed h-[4.5rem]">
+                                {tier.description}
+                            </p>
 
                             <ul className="mb-8 space-y-4 flex-1">
                                 {tier.features.map((feature) => (
