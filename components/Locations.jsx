@@ -10,8 +10,8 @@ const rivers = [
         name: "Soca Valley",
         country: "Slovenia",
         season: "Apr-Oct",
-        grade: "Grade II-III",
-        image: "/images/P6025985.webp",
+        grade: "Grade II-IV",
+        image: "/images/soca.webp",
         description: "The emerald beauty. Crystal clear water and perfect teaching sections.",
         delay: 0.1
     },
@@ -20,7 +20,7 @@ const rivers = [
         country: "Austria",
         season: "Mar-Nov",
         grade: "Grade II-III+",
-        image: "/images/DSC00541.webp",
+        image: "/images/salza.jpg",
         description: "A long, wild classic. Alpine scenery and continuous whitewater.",
         delay: 0.2
     },
@@ -29,7 +29,7 @@ const rivers = [
         country: "Germany",
         season: "Year-round",
         grade: "Grade II-II+",
-        image: "/images/BABS2829.webp",
+        image: "/images/isar.jpg",
         description: "Bavarian wilderness. Ideal for honing fundamentals in a stunning setting.",
         delay: 0.3
     },
@@ -38,7 +38,7 @@ const rivers = [
         country: "Austria",
         season: "Apr-Oct",
         grade: "Grade II+-III",
-        image: "/images/BABS2832.webp",
+        image: "/images/inn.jpg",
         description: "Big volume power. Experience the rush of massive wave trains.",
         delay: 0.4
     }
