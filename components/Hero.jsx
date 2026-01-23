@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -9,6 +9,17 @@ import { AuroraText } from "./AuroraText";
 
 export default function Hero() {
     const ref = useRef(null);
+    const [isMobile, setIsMobile] = useState(true);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start start", "end start"],
@@ -20,10 +31,13 @@ export default function Hero() {
     return (
         <div
             ref={ref}
-            className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+            className="relative h-[100svh] w-full flex items-center justify-center overflow-hidden"
         >
             {/* Parallax Background */}
-            <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
+            <motion.div
+                style={{ y: isMobile ? 0 : yBg }}
+                className="absolute inset-0 z-0 will-change-transform"
+            >
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/60 z-10" />
                 <div className="absolute inset-0 bg-black/20 z-10" />
                 <Image
@@ -37,8 +51,8 @@ export default function Hero() {
 
             {/* Content */}
             <motion.div
-                style={{ y: yText }}
-                className="relative z-20 text-center px-4 max-w-5xl mx-auto"
+                style={{ y: isMobile ? 0 : yText }}
+                className="relative z-20 text-center px-4 max-w-5xl mx-auto will-change-transform"
             >
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -68,7 +82,7 @@ export default function Hero() {
                 >
                     <Link
                         href="#book"
-                        className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-accent rounded-full overflow-hidden hover:scale-105 shadow-[0_0_40px_-10px_rgba(252,96,168,0.5)] hover:shadow-[0_0_60px_-15px_rgba(8,178,227,0.7)]"
+                        className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary transition-all duration-300 bg-accent rounded-full overflow-hidden hover:scale-105 shadow-[0_0_40px_-10px_rgba(252,96,168,0.5)] hover:shadow-[0_0_60px_-15px_rgba(8,178,227,0.7)]"
                     >
                         <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <span className="relative z-10 flex items-center">

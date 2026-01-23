@@ -72,7 +72,7 @@ export default function Navbar() {
                     >
                         <Link
                             href="#book"
-                            className="bg-accent text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-accent/30 hover:shadow-accent/50 transition-all"
+                            className="bg-accent text-primary px-6 py-2.5 rounded-full font-bold shadow-lg shadow-accent/30 hover:shadow-accent/50 transition-all"
                         >
                             Book Session
                         </Link>
